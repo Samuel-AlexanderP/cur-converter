@@ -20,7 +20,6 @@ const CurrencyConverter: React.FC = () => {
     // Store the conversion result here (computed from lastValidAmount)
     const [convertedAmount, setConvertedAmount] = useState<number | null>(null);
     const [loading, setLoading] = useState<boolean>(true);
-    const [error, setError] = useState<string | null>(null);
 
     // Fetch exchange rates once on component mount
     useEffect(() => {
@@ -70,7 +69,6 @@ const CurrencyConverter: React.FC = () => {
     };
 
     if (loading) return <p>Loading rates...</p>;
-    if (error) return <p>Error: {error}</p>;
 
     return (
         <div className='justify-center items-center' >
